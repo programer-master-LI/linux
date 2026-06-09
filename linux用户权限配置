@@ -79,3 +79,7 @@ systemctl restart sshd
 cat /etc/sudoers
 
 打开文件并编辑文档vim /etc/ssh/sshd-config
+查找PermitRootlogin看状态
+看到状态PermitRootlogin被注释掉了#，或改成no了就行
+
+再重启sshd服务systemctl restart sshd就完成了
