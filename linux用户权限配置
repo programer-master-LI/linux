@@ -17,6 +17,10 @@ sudo 命令
 解释：普通用户临时借用 root 权限执行命令。
 示例：sudo mkdir /root/test
 
+ROOT密钥登录
+普通用户登录
+SSH密钥对登录
+
 创建user_ops+sudo临时提权，高权限操作都得监控
 ############
 版本rocky 9
