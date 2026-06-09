@@ -1,0 +1,33 @@
+root用户和admin用户
+最小权限原则，root用户误操作rm -rf/会导致系统崩溃
+只给完成工作必需最小权限
+su -i是以 root 用户身份启动一个登录 Shell，提示符通常会从：$变成：#表示你已经进入 root 环境。
+查看当前是否为 root输入whoami,输出root说明当前在 root 用户下
+
+
+创建user_ops+sudo临时提权，高权限操作都得监控
+############
+版本rocky 9
+创建用户
+sudo adduser admin
+提权（把admin加入到关键用户组里wheel，这个组默认拥有执行sudo的特权）
+sudo usermod -aG wheel admin
+加到权限组之后，切换到用户admin
+su - admin切换用户
+需要密码
+这时候两种方式切换到admin
+一：输入密码
+如果知道
+二：不知道密码
+先进入root用户
+sudo -i
+进入root用户，再执行su -admin由此可见root权限极高
+这里就进入到damin用户里了，输入sudo passwd修改密码
+输入要设置的密码123456
+如果再admin下不能修改密码
+退出某个用户，返回root用户快捷键Ctrl + D或exit
+切换到root用户，输入passwd admin
+设置admin的新密码
+再切到admin验证
+###########
+(返回root则成功）
