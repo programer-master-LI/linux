@@ -49,7 +49,6 @@ Linux 权限分：属主、属组、其他用户，权限：读 (r)、写 (w)、
 只有写：-w- → 2
 只有执行：--x → 1
 
-
 chmod 权限值 文件/目录           modle
 解释：修改文件权限。
 常用数值：
@@ -70,3 +69,13 @@ chmod 644 文件          普通文件常用权限
 chown 用户:组 文件               own
 解释：修改文件所属用户和用户组。
 示例：chown root:root 1.txt
+########
+关闭通过ssh远程root访问
+/etc/ssh/sshd_config
+设置PermitRootlogin no
+systemctl restart sshd
+
+查看sudoers文件里组的权限
+cat /etc/sudoers
+
+打开文件并编辑文档vim /etc/ssh/sshd-config
