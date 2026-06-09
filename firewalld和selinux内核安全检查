@@ -20,5 +20,17 @@ sudo firewall-cmd --list-all
 sudo firewalld-cmd --permanet --add-rich-rule='rule family="ipv4"source address='192,168.1.50' service name="ssh" accept'
 sudo firewall-cmd --reload
 
+三.selinux内核安全
+三种模式enforcing强制拦截，并记录,permissive宽容模式，记录不拦截,disabled禁用selinux，失去selinux防护
+ge
+修改模式 sudo vim /etc/selinux/config
+查看selinux状态
+修改模式到想要的enforcing，permissive，disabled
+############
+处理权限报错问题（36：25秒）
+排障查看日志：/var/log/audit/audit.log
+或安装工具sudo dnf install setroubleshoot -y
+使用sealert -a /var/log/audit/audit.log分析
+
 
 
